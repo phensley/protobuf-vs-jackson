@@ -55,7 +55,7 @@ public class ProtobufBenchmarks implements BenchmarkSet {
   @Override
   public int encodedSize() {
     Obj obj = buildObject("parent");
-    final byte[] bytes = obj.toByteArray();
+    byte[] bytes = obj.toByteArray();
     return bytes.length;
   }
   
