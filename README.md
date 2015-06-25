@@ -110,6 +110,7 @@ JSON-encoded object with 1 child (indented for readability): 207 characters
     }
 
 Protobuf-encoded object with 1 child (byte array): 55 bytes
+
     { 
       \x08, \x01, \x18, \xff, \xff, \xff, \xff, \x07, \x20, \xff, \xff, \xff, \xff, \xff, \xff, \xff, \xff, \x7f, \x2a,
       \x06, 'p', 'a', 'r', 'e', 'n', 't', \x52, \x1b, \x08, \x01, \x18, \xff, \xff, \xff, \xff, \x07, \x20, \xff, \xff,
