@@ -15,7 +15,14 @@ JodaTime to / from string, while Jackson was using a more efficient
 serialization.  The profiler showed JodaTime conversion was taking up most of
 the time, making PB look far worse.
 
-Numbers from my development laptop:
+Usage
+-----
+
+    ./gradlew run
+
+
+Example Run
+-----
 
     JDK 8
     Macbook Pro Retina (mid-2012)

@@ -30,6 +30,8 @@ task deleteGeneratedSource << {
   project.delete project.fileTree(dir: generatedSrcDir)
 }
 
+mainClassName = 'com.glonk.benchmark.BenchmarkApp'
+
 protocDep = "com.google.protobuf:protoc:${protobufVersion}"
 
 tasks.eclipse.dependsOn 'generateProto'
