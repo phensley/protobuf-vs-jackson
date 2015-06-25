@@ -1,0 +1,51 @@
+
+plugins {
+  id 'com.google.protobuf' version '0.4.1'
+}
+
+repositories {
+  mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+project.ext {
+  generatedSrcDir = "${buildDir}/generated-sources"
+
+  jacksonVersion = '2.5.1'
+  protobufVersion = '3.0.0-alpha-3'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs = ['src/main/java', "${generatedSrcDir}/main"]
+    }
+  }
+}
+
+task deleteGeneratedSource << {
+  project.delete project.fileTree(dir: generatedSrcDir)
+}
+
+protocDep = "com.google.protobuf:protoc:${protobufVersion}"
+
+tasks.eclipse.dependsOn 'generateProto'
+
+project.afterEvaluate {
+  generateProto.inputs.file "${projectDir}/build.gradle"
+  generateProto.dependsOn deleteGeneratedSource
+}
+
+dependencies {
+  compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+  compile "com.fasterxml.jackson.module:jackson-module-afterburner:${jacksonVersion}"
+  compile "com.google.protobuf:protobuf-java:${protobufVersion}"
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+}
+
