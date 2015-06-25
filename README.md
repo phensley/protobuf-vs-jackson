@@ -6,11 +6,11 @@ This is a simple comparison of performance and size between
 Jackson (w/ Afterburner) and Protocol Buffers version 3.
 
 
-I came across an article comparing the two, showing PB with worse performance, in
+I came across [an article][article] comparing the two, showing PB with worse performance, in
 some tests nearly 2-times slower. 
  
-My initial reaction was: this can't be correct.  When browsing the benchmark's
-source code I noticed the PB version was adversely impacted by converting
+My initial reaction was: this can't be correct.  When browsing the [benchmark's
+source code][source] I noticed the PB version was adversely impacted by converting
 JodaTime to / from string, while Jackson was using a more efficient
 serialization.  The profiler showed JodaTime conversion was taking up most of
 the time, making PB look far worse.
@@ -120,12 +120,8 @@ Protobuf-encoded object with 1 child (byte array): 55 bytes
       'd', ' ', '1' 
     }
 
-References:
 
-Article
-http://technicalrex.com/2015/02/27/performance-playground-jackson-vs-protocol-buffers-part-2/
-       
-Source
-http://github.com/egillespie/performance-playground 
+[article]: http://technicalrex.com/2015/02/27/performance-playground-jackson-vs-protocol-buffers-part-2/
+[source]: http://github.com/egillespie/performance-playground 
 
 
