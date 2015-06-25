@@ -86,6 +86,35 @@ Numbers from my development laptop:
                        afterburner   3516
                           protobuf   977
 
+Example Objects
+-----
+
+JSON-encoded object with 1 child (indented for readability): 207 characters
+
+    {
+        "num64": 9223372036854775807,
+        "flag": true,
+        "str": "parent",
+        "type": "FOO",
+        "children": [
+            {
+                "num64": 9223372036854775807,
+                "flag": true,
+                "str": "child 1",
+                "type": "FOO",
+                "children": null,
+                "num32": 2147483647
+            }
+        ],
+        "num32": 2147483647
+    }
+
+Protobuf-encoded object with 1 child (byte array): 55 bytes
+    { 
+      \x08, \x01, \x18, \xff, \xff, \xff, \xff, \x07, \x20, \xff, \xff, \xff, \xff, \xff, \xff, \xff, \xff, \x7f, \x2a,
+      \x06, 'p', 'a', 'r', 'e', 'n', 't', \x52, \x1b, \x08, \x01, \x18, \xff, \xff, \xff, \xff, \x07, \x20, \xff, \xff,
+      \xff, \xff, \xff, \xff, \xff, \xff, \x7f, \x2a, \x07, 'c', 'h', 'i', 'l', 'd', ' ', '1' 
+    }
 
 References:
 
