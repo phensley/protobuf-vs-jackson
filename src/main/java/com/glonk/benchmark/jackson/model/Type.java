@@ -13,5 +13,8 @@ public enum Type {
     this.value = value;
   }
   
+  public int getValue() {
+    return value;
+  }
   
 }
